@@ -17,6 +17,8 @@ class ViewController: UIViewController, UICollectionViewDataSource, UICollection
     
     var status = false
     
+    var selectedCount: Int = 0
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         
@@ -92,16 +94,18 @@ class ViewController: UIViewController, UICollectionViewDataSource, UICollection
         print("exit")
     }
     
+    func clickedItem(_ sender: UIButton) {
+        print("clicked Item")
+    }
+    
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
         return imageArray.count
     }
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
-        let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "Cell", for: indexPath)
-        
-        if let imageView = cell.viewWithTag(1) as? UIImageView {
-            imageView.image = imageArray[indexPath.row]
-        }
+        let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "Cell", for: indexPath) as! ImageCell
+
+        cell.imageView.image = imageArray[indexPath.row]
         
         return cell
     }
@@ -117,6 +121,22 @@ class ViewController: UIViewController, UICollectionViewDataSource, UICollection
     
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, minimumInteritemSpacingForSectionAt section: Int) -> CGFloat {
         return 1.0
+    }
+    
+    func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
+        
+        let cell = collectionView.cellForItem(at: indexPath) as! ImageCell
+        
+        if cell.label.isHidden {
+            cell.label.text = "\(selectedCount)"
+            cell.label.isHidden = false
+            selectedCount += 1
+        }
+        else {
+            cell.label.isHidden = true
+            selectedCount -= 1
+        }
+        print("selected Item \(indexPath.row)")
     }
 
 }

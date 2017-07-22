@@ -6,6 +6,7 @@
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="11757"/>
+        <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
@@ -31,7 +32,7 @@
                                     <inset key="sectionInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
                                 </collectionViewFlowLayout>
                                 <cells>
-                                    <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="Cell" id="CTB-72-h3w">
+                                    <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="Cell" id="CTB-72-h3w" customClass="ImageCell" customModule="ImagePickerSample" customModuleProvider="target">
                                         <rect key="frame" x="0.0" y="0.0" width="94" height="94"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                         <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
@@ -41,14 +42,41 @@
                                                 <imageView userInteractionEnabled="NO" tag="1" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="IR0-Mu-PP8">
                                                     <rect key="frame" x="0.0" y="0.0" width="94" height="94"/>
                                                 </imageView>
+                                                <label hidden="YES" opaque="NO" userInteractionEnabled="NO" tag="2" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="wordWrap" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="lJE-Ic-Hpt" customClass="UIPaddingLabel" customModule="ImagePickerSample" customModuleProvider="target">
+                                                    <rect key="frame" x="44" y="8" width="42" height="21"/>
+                                                    <color key="backgroundColor" red="0.0" green="0.0" blue="0.0" alpha="0.60288254310344824" colorSpace="calibratedRGB"/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                    <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                                    <nil key="highlightedColor"/>
+                                                    <userDefinedRuntimeAttributes>
+                                                        <userDefinedRuntimeAttribute type="number" keyPath="topInset">
+                                                            <real key="value" value="0.0"/>
+                                                        </userDefinedRuntimeAttribute>
+                                                        <userDefinedRuntimeAttribute type="number" keyPath="bottomInset">
+                                                            <real key="value" value="0.0"/>
+                                                        </userDefinedRuntimeAttribute>
+                                                        <userDefinedRuntimeAttribute type="number" keyPath="leftInset">
+                                                            <real key="value" value="0.0"/>
+                                                        </userDefinedRuntimeAttribute>
+                                                        <userDefinedRuntimeAttribute type="number" keyPath="rightInset">
+                                                            <real key="value" value="0.0"/>
+                                                        </userDefinedRuntimeAttribute>
+                                                    </userDefinedRuntimeAttributes>
+                                                </label>
                                             </subviews>
                                         </view>
                                         <constraints>
+                                            <constraint firstItem="lJE-Ic-Hpt" firstAttribute="trailing" secondItem="CTB-72-h3w" secondAttribute="trailingMargin" id="8JZ-jZ-78x"/>
                                             <constraint firstItem="IR0-Mu-PP8" firstAttribute="centerX" secondItem="CTB-72-h3w" secondAttribute="centerX" id="9dO-qP-w4h"/>
+                                            <constraint firstItem="lJE-Ic-Hpt" firstAttribute="top" secondItem="CTB-72-h3w" secondAttribute="topMargin" id="NPp-6a-ThS"/>
                                             <constraint firstItem="IR0-Mu-PP8" firstAttribute="height" secondItem="CTB-72-h3w" secondAttribute="height" id="cyN-o2-lJD"/>
                                             <constraint firstItem="IR0-Mu-PP8" firstAttribute="centerY" secondItem="CTB-72-h3w" secondAttribute="centerY" id="yUd-4A-Cpa"/>
                                             <constraint firstItem="IR0-Mu-PP8" firstAttribute="width" secondItem="CTB-72-h3w" secondAttribute="width" id="ygG-xJ-dET"/>
                                         </constraints>
+                                        <connections>
+                                            <outlet property="imageView" destination="IR0-Mu-PP8" id="cjM-yg-ZwY"/>
+                                            <outlet property="label" destination="lJE-Ic-Hpt" id="KbX-cW-Bps"/>
+                                        </connections>
                                     </collectionViewCell>
                                 </cells>
                             </collectionView>

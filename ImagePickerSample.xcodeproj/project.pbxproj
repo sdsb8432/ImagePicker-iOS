@@ -12,6 +12,8 @@
 		F5F51B2F1F21992800844308 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = F5F51B2D1F21992800844308 /* Main.storyboard */; };
 		F5F51B311F21992800844308 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = F5F51B301F21992800844308 /* Assets.xcassets */; };
 		F5F51B341F21992800844308 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = F5F51B321F21992800844308 /* LaunchScreen.storyboard */; };
+		F5F51B7E1F2328CD00844308 /* ImageCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = F5F51B7D1F2328CD00844308 /* ImageCell.swift */; };
+		F5F51B811F232E7300844308 /* UIPaddingLabel.swift in Sources */ = {isa = PBXBuildFile; fileRef = F5F51B801F232E7300844308 /* UIPaddingLabel.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -22,6 +24,8 @@
 		F5F51B301F21992800844308 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		F5F51B331F21992800844308 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		F5F51B351F21992800844308 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		F5F51B7D1F2328CD00844308 /* ImageCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = ImageCell.swift; path = ../ImageCell.swift; sourceTree = "<group>"; };
+		F5F51B801F232E7300844308 /* UIPaddingLabel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UIPaddingLabel.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -54,6 +58,8 @@
 		F5F51B281F21992800844308 /* ImagePickerSample */ = {
 			isa = PBXGroup;
 			children = (
+				F5F51B7F1F232E5D00844308 /* CustomView */,
+				F5F51B7D1F2328CD00844308 /* ImageCell.swift */,
 				F5F51B291F21992800844308 /* AppDelegate.swift */,
 				F5F51B2B1F21992800844308 /* ViewController.swift */,
 				F5F51B2D1F21992800844308 /* Main.storyboard */,
@@ -62,6 +68,14 @@
 				F5F51B351F21992800844308 /* Info.plist */,
 			);
 			path = ImagePickerSample;
+			sourceTree = "<group>";
+		};
+		F5F51B7F1F232E5D00844308 /* CustomView */ = {
+			isa = PBXGroup;
+			children = (
+				F5F51B801F232E7300844308 /* UIPaddingLabel.swift */,
+			);
+			name = CustomView;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -137,8 +151,10 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				F5F51B811F232E7300844308 /* UIPaddingLabel.swift in Sources */,
 				F5F51B2C1F21992800844308 /* ViewController.swift in Sources */,
 				F5F51B2A1F21992800844308 /* AppDelegate.swift in Sources */,
+				F5F51B7E1F2328CD00844308 /* ImageCell.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -302,6 +318,7 @@
 				F5F51B3A1F21992800844308 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
